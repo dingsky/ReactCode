@@ -1,0 +1,63 @@
+【react官方地址】
+ https://reactjs.org/ 
+ 
+【菜鸟教程】
+http://www.runoob.com/react/react-tutorial.html
+
+【渲染】
+const element = <h1>Hello, world!</h1>;
+ReactDOM.render(
+    element,
+    document.getElementById('example')
+);
+其中element是被渲染的元素, example是被渲染的对象的ID
+render是渲染函数
+
+【函数封装】
+function Clock(props) {
+  return (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>现在是 {props.date.toLocaleTimeString()}.</h2>
+    </div>
+  );
+}
+其中props为参数, 实际返回一个时钟对象
+
+【创建定时任务】
+setInterval(click, 1000);   
+表示每1000毫秒调用一次click方法
+
+【类封装】
+class Clock extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>现在是 {this.props.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
+
+【注释】
+ {/*注释需要写在花括号中...*/} 
+ 
+【关于大小写】
+HTML 标签 vs. React 组件
+React 可以渲染 HTML 标签 (strings) 或 React 组件 (classes)。
+
+要渲染 HTML 标签，只需在 JSX 里使用小写字母的标签名。
+
+var myDivElement = <div className="foo" />;
+ReactDOM.render(myDivElement, document.getElementById('example'));
+要渲染 React 组件，只需创建一个大写字母开头的本地变量。
+
+var MyComponent = React.createClass({/*...*/});
+var myElement = <MyComponent someProperty={true} />;
+ReactDOM.render(myElement, document.getElementById('example'));
+React 的 JSX 使用大、小写的约定来区分本地组件的类和 HTML 标签。
+
+注意:
+
+由于 JSX 就是 JavaScript，一些标识符像 class 和 for 不建议作为 XML 属性名。作为替代，React DOM 使用 className 和 htmlFor 来做对应的属性。 
